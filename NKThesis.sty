@@ -33,6 +33,8 @@
 \RequirePackage[unicode,bookmarksnumbered,colorlinks=true,linkcolor=black]{hyperref}
 
 \ifxetex
+  \RequirePackage{fontspec}
+  \setmainfont{Arial}
   \RequirePackage{xeCJK}
   \edef\CJK@UnicodeEnc{UTF8}
   %\def\CJKaddEncHook#1#2{\expandafter\def\csname xeCJK@enc@#1\endcsname{#2}}
@@ -99,8 +101,6 @@
   \def\figurename{图}
   \def\NKT@proof{证明}
 \fi
-
-
 
 \RequirePackage{silence}
 \hbadness=10000 \vbadness=10000 \vfuzz=30pt \hfuzz=30pt

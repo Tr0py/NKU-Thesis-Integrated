@@ -4,10 +4,23 @@
 
 \section{系统要求}
 
-模板仅在 TexLive 2020/2021/2022 下测试\XeLaTeX 通过。
+模板在 TexLive 2020/2021/2022 下测试\XeLaTeX, PDF\LaTeX 通过。
 对于其它 TeX 发行版可能需要做个别修改。
-本模板改编自孙老师（http://222.30.48.141/$\sim$sunwch）的版本，
+
+
+本模板最初版来自孙老师\url{http://222.30.48.141/$\sim$sunwch}的版本，
 格式参照南开大学2019年毕业论文格式。
+后来在志愿者的努力下做成了开源项目
+\url{https://github.com/NewFuture/NKThesis}。
+%
+同时，赵子懿，潘宇等同学也主动维护了本科论文的\LaTeX 开源版本
+\url{https://www.overleaf.com/latex/templates/nku-dissertation-template2020/ryscpwbhbmhs}。
+%
+鉴于各种版本维护复杂，2022年12月疫情期间，南开大学计算机系程明明教授
+在硕士、博士论文的基础上，统一了本科、学术硕士、专业硕士、博士和专业博士的
+论文模板。
+新的模板在GitHb上开放共享\url{https://github.com/MCG-NKU/NKU-Thesis}，
+欢迎有问题的同学及时反馈。
 
 \section{NKThesis 使用说明}
 
@@ -26,11 +39,12 @@
 
 
 在Windows系统中可以直接使用PDF\LaTeX。
-如果想在Overleaf中使用，请自行上传相关字体文件到根目录：
-simfang.ttf，SimSun.ttc，simkai.ttf，SimHei.ttf。
+\textcolor{red}{如果想在Overleaf中使用Pdf\LaTeX，
+需要传相关字体文件到根目录：
+simfang.ttf，SimSun.ttc，simkai.ttf，SimHei.ttf。}
 
 
-本模板用到 宋体、楷体、仿宋、黑体四种字体. 若需重新配置字体, 请修改 NKTfonts.cfg。
+本模板用到 宋体、楷体、仿宋、黑体四种字体. 若需重新配置字体, 请自行添加修改。%请修改 NKTfonts.cfg。
 对于 Linux/Mac, 可能需要设置环境变量 OSFONTDIR, 具体内容请参考 texmf.cnf。
 
 
@@ -96,7 +110,7 @@ NKThesis 已经调用以下宏包，您无须重新调用。
 参考文献引用:
 \cite{ChenCheChen2001,Nadkarni-1992,Hua-Wang-1973}
 文献\cite{ZhuKeZhen,Huo}\cite{Timoshenko,Zhang-Wang}
-\cite[Theorem 2.1]{ZhuKeZhen}
+\cite[Theorem 2.1]{ZhuKeZhen,21PAMI-Sal100K}
 
 \subsection{录入参考文献}
 
