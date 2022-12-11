@@ -28,8 +28,9 @@
 \def\jiacu{\special{pdf: literal direct q 0.2 w 2 Tr}\aftergroup\jiacuu}
 \def\jiacuu{\special{pdf: literal 0 Tr}}
 
+\newcommand{\myPara}[1]{\vspace{.2in} \noindent\textbf{#1}\quad}
 
-\RequirePackage[unicode,bookmarksnumbered,colorlinks=true]{hyperref}
+\RequirePackage[unicode,bookmarksnumbered,colorlinks=true,linkcolor=black]{hyperref}
 
 \ifxetex
   \RequirePackage{xeCJK}
@@ -116,7 +117,7 @@
 \let\song\songti
 \let\hei\heiti
 \let\fs\fangsong
-\punctstyle{banjiao}
+\punctstyle{quanjiao}
 
 \endlinechar \m@ne
 \newif\if@tocline
@@ -599,9 +600,9 @@
 \csname CJK@makeInactive\endcsname
 \def\NKT@string@boshi{博士}
 \def\NKT@string@xuelishuoshi{学历硕士}
-\def\NKT@string@zhuanyeshuoshixuewei{硕士专业学位}
-\def\NKT@string@gaoxiaojiaoshi{高校教师}
-\def\NKT@string@tongdengxuelishuoshi{同等学力硕士}
+\def\NKT@string@zhuanyeshuoshi{硕士专业学位}
+\def\NKT@string@zhuanyeboshi{专业博士}
+\def\NKT@string@benke{本科}
 
 \NKT@definekey{论文题目(中文)}      {lunwentimuzh}
 \NKT@definekey{副标题}              {fubiaoti}
