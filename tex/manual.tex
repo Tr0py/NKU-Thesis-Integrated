@@ -26,26 +26,17 @@
 
 本模板可以使用以下两种方式编译:
 \begin{enumerate}
- \item \XeLaTeX + BibTex [推荐]
- \item PDF\LaTeX + BibTex
+ \item \XeLaTeX + BibTex 
+ \item PDF\LaTeX + BibTex [推荐]
 \end{enumerate}
 
-
-我们建议您使用\XeLaTeX 编译。与PDF\LaTeX 相比，\XeLaTeX  编译长文档的速度更快，
-编译一篇一百多页的论文只需几秒的时间(SL9400 @ 1.86GHz)。
-
-在改变编译方式前应先删除 *.toc 和 *.aux 文件，
+在改变编译方式前建议先删除 *.toc 和 *.aux 文件，
 因为不同编译方式产生的辅助文件格式可能并不相同。
+%
+Windows系统中已经默认包含这些字体文件：
+simfang.ttf，SimSun.ttc，simkai.ttf，SimHei.ttf，
+\textcolor{red}{因而在Windows系统中删除这些字体文件也可以正确编译。}
 
-
-在Windows系统中可以直接使用PDF\LaTeX。
-\textcolor{red}{如果想在Overleaf中使用Pdf\LaTeX，
-需要传相关字体文件到根目录：
-simfang.ttf，SimSun.ttc，simkai.ttf，SimHei.ttf。}
-
-
-本模板用到 宋体、楷体、仿宋、黑体四种字体. 若需重新配置字体, 请自行添加修改。%请修改 NKTfonts.cfg。
-对于 Linux/Mac, 可能需要设置环境变量 OSFONTDIR, 具体内容请参考 texmf.cnf。
 
 
 
@@ -88,22 +79,47 @@ NKThesis 已经调用以下宏包，您无须重新调用。
 
 插图的例子：
 
-\begin{center}
-\includegraphics[viewport=0 0 2984 969,width=40mm]{nankaidaxue.pdf}
-\figurecaption{南开大学}
-\end{center}
+\begin{figure}[h]
+  \centering
+  \includegraphics[viewport=0 0 2984 969,width=40mm]{nankaidaxue.pdf}
+  \caption{南开大学}
+\end{figure}
 
 \section{字体}
 
-一般情况下, 您不需要显式地设置字体. 如果确实需要, 请使用以下命令
 
-\begin{verbatim}
-宋体:  \rmfamily\upshape 或 \songti
-黑体:  \bfseries 或 \heiti
-楷体:  \itshape  或 \kaiti
-仿宋:  \ttfamily 或 \fangsong
-加粗:  \jiacu
-\end{verbatim}
+一般情况下, 您不需要显式地设置字体。
+如果确实需要, 请使用以下命令
+
+
+\renewcommand{\AddFig}[1]{\includegraphics[height=.17\textwidth]{#1}}
+
+\begin{figure}
+  \centering
+  \begin{minipage}[t]{.5\linewidth}
+    \begin{verbatim}
+    宋体:  \rmfamily 或 \songti
+    黑体:  \bfseries 或 \heiti
+    楷体:  \itshape  或 \kaiti
+    仿宋:  \ttfamily 或 \fangsong
+    加粗:  \jiacu
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.4\linewidth}
+    \songti{宋体Font}, \rmfamily{宋体Font} \\
+    \bfseries{黑体Font}, \heiti{黑体Font} \\
+    \itshape{楷体Font}, \kaiti{楷体Font} \\
+    \ttfamily{仿宋Font}, \fangsong{仿宋Font} \\ 
+    \jiacu{加粗Font}\\
+  \end{minipage}
+  \subfloat[PdfLaTeX + Win/Over]{\AddFig{PdfLatexWin.png}} \hfill
+  \subfloat[XeLaTeX + Win]{\AddFig{XeLaTeXWin.png}} \hfill
+  %\subfloat[PdfLaTeX + Over]{\AddFig{PdfLaTeXOverleaf.png}} \hfill
+  \subfloat[XeLaTeX + Over]{\AddFig{XeLaTeXOverleaf.png}}
+  \caption{字体设置示例：Win代表Windows系统，Over代表Overleaf上。}
+\end{figure}
+
+
 
 
 \section{参考文献} \label{manual:ref}
@@ -391,3 +407,4 @@ Git Project Manager支持版本同步等。
 
 
 参考文献的录入请参考\ref{manual:ref}。 
+

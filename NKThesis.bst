@@ -1299,7 +1299,7 @@ FUNCTION {inproceedings}
     { format.incoll.inproc.crossref output.nonnull
     }
   if$
-  format.pages "pages" output.check
+  %format.pages "pages" output.check
   format.note output
   fin.entry
   write.url
